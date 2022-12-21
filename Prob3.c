@@ -3,38 +3,23 @@
 
 int main(void){
     long int nT = 0;
-    while (nT == 0 || nT < 0 || nT > 500){
-        scanf("%li", &nT);
-    }
-    int ansa[nT];
-    for(int i = 0; i <nT ; i++){
-        int a = -1, b = -1, k = -1;
-        while(a < 0 || a > 1000 ){
-            scanf("%i", &a);
-        }
-        while(b < 0 || b > 100){
-            scanf("%i", &b);
-        }
-        while(k < 0 || k > 100){
-            scanf("%i", &k);
-        }
+    scanf("%li", &nT);
+    for(int i = 0; i < nT ; i++){
+        int a, b, k;
+        scanf("%i %i %i", &a, &b, &k);
         int diff = abs(b - a);
         if(diff == 0){
-            ansa[i] = 0;
+            printf("0\n");
         }
         else{
             int ans = diff / k;
             if((diff % k) == 0){
-                ansa[i] = ans;
+                printf("%i\n", ans);
             }
             else{
                 ans++;
-                ansa[i] = ans;
+                printf("%i\n", ans);
             }
         }
-    }
-
-    for(int i = 0; i < nT ; i++){
-        printf("%s\n", ansa[i]);
     }
 }
